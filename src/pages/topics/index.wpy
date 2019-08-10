@@ -105,6 +105,7 @@
     }
     // 下拉刷新
     async onPullDownRefresh() {
+      this.noMoreData = false
       this.page = 1
       await this.getTopics(1, true)
       wepy.stopPullDownRefresh()
