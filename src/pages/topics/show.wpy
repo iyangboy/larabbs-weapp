@@ -91,6 +91,9 @@ page{
         // 格式化 updated_at
         topic.updated_at_diff = util.diffForHumans(topic.updated_at)
 
+        // 图片适配处理
+        topic.body = topic.body.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
+
         this.topic = topic
         this.$apply()
       } catch (err) {
